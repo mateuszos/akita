@@ -268,6 +268,11 @@ describe('NgEntityService', () => {
       service.baseUrl = undefined;
       expect(() => service.api).toThrowError();
     }));
+
+    it('should allow empty string baseUrl', inject([TestService], (service: TestService) => {
+      service.baseUrl = '';
+      expect(service.baseUrl).toEqual('');
+    }));
   });
 
   describe('get', () => {

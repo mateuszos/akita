@@ -52,7 +52,7 @@ export class NgEntityService<S extends EntityState = any> extends EntityService<
   }
 
   get api() {
-    if (!this.baseUrl) {
+    if (!this.baseUrl && this.baseUrl !== '') {
       throw new Error(`baseUrl of ${this.constructor.name} is not defined.`);
     }
 
